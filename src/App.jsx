@@ -1,19 +1,26 @@
 import React, { useState } from 'react';
-import { Sparkles, Zap, Palette, Code, Check, ArrowRight, Menu, X, Monitor, Smartphone, Layout } from 'lucide-react';
+import { Sparkles, Zap, Palette, Code, Check, ArrowRight, Menu, X, Monitor, Smartphone, Layout, Eye, Mail, MessageCircle, Award, Briefcase } from 'lucide-react';
+import ShowcaseSample from './samples/ShowcaseSample';
+import SaasSample from './samples/SaasSample';
+import PortfolioSample from './samples/PortfolioSample';
+import AgencySample from './samples/AgencySample';
+import RestaurantSample from './samples/RestaurantSample';
+import FitnessSample from './samples/FitnessSample';
 
 function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [selectedSample, setSelectedSample] = useState(null);
+  const [previewSample, setPreviewSample] = useState(null);
 
   const samples = [
     {
       id: 1,
-      title: 'E-commerce Moderno',
-      category: 'Loja Virtual',
-      description: 'Landing page para lojas online com carrinho e checkout integrado',
+      title: 'Showcase',
+      category: 'Vitrine de Produtos',
+      description: 'Exiba seus produtos de forma elegante e profissional',
       color: 'from-purple-500 to-pink-500',
-      features: ['Carrinho de compras', 'Integração de pagamento', 'Catálogo de produtos'],
-      image: '🛍️'
+      features: ['Galeria de produtos', 'Filtros por categoria', 'Design responsivo'],
+      image: '✨'
     },
     {
       id: 2,
@@ -65,33 +72,33 @@ function App() {
   const features = [
     {
       icon: <Zap className="w-6 h-6" />,
-      title: 'Performance Otimizada',
-      description: 'Carregamento ultra-rápido para melhor experiência do usuário'
+      title: 'Rápido que só',
+      description: 'Página carrega na velocidade da luz. Ninguém tem paciência pra esperar, né?'
     },
     {
       icon: <Smartphone className="w-6 h-6" />,
-      title: '100% Responsivo',
-      description: 'Perfeito em qualquer dispositivo - mobile, tablet ou desktop'
+      title: 'Funciona em tudo',
+      description: 'Celular, tablet, desktop... Em qualquer tela fica perfeito'
     },
     {
       icon: <Palette className="w-6 h-6" />,
-      title: 'Design Moderno',
-      description: 'Interfaces elegantes que convertem visitantes em clientes'
+      title: 'Bonito de verdade',
+      description: 'Design moderno que chama atenção e faz as pessoas agirem'
     },
     {
       icon: <Code className="w-6 h-6" />,
-      title: 'Código Limpo',
-      description: 'React e Tailwind CSS para fácil manutenção e escalabilidade'
+      title: 'Código que não dá dor de cabeça',
+      description: 'Limpo, organizado e fácil de dar manutenção depois'
     },
     {
       icon: <Layout className="w-6 h-6" />,
-      title: 'Customizável',
-      description: 'Adaptamos cada landing page à identidade da sua marca'
+      title: 'Do seu jeito',
+      description: 'Adapto tudo pra combinar com a cara da sua marca'
     },
     {
       icon: <Monitor className="w-6 h-6" />,
-      title: 'SEO Otimizado',
-      description: 'Estrutura preparada para ranquear bem nos buscadores'
+      title: 'Google vai amar',
+      description: 'Otimizado pra aparecer bem nos resultados de busca'
     }
   ];
 
@@ -102,18 +109,25 @@ function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-2">
-              <Sparkles className="w-8 h-8 text-purple-600" />
-              <span className="text-xl font-bold gradient-text">LandingStore</span>
+              <Code className="w-8 h-8 text-purple-600" />
+              <span className="text-xl font-bold text-purple-600">Guilherme Torres</span>
             </div>
 
             {/* Desktop Menu */}
             <div className="hidden md:flex items-center space-x-8">
               <a href="#samples" className="text-slate-600 hover:text-purple-600 transition">Samples</a>
-              <a href="#features" className="text-slate-600 hover:text-purple-600 transition">Features</a>
+              <a href="#features" className="text-slate-600 hover:text-purple-600 transition">Skills</a>
+              <a href="#about" className="text-slate-600 hover:text-purple-600 transition">Sobre</a>
               <a href="#contact" className="text-slate-600 hover:text-purple-600 transition">Contato</a>
-              <button className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-2 rounded-full hover:shadow-lg transition">
-                Começar Agora
-              </button>
+              <a
+                href="https://wa.me/5521983781120"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-2 rounded-full hover:shadow-lg transition flex items-center"
+              >
+                <MessageCircle className="w-4 h-4 mr-2" />
+                WhatsApp
+              </a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -131,11 +145,18 @@ function App() {
           <div className="md:hidden bg-white border-t border-slate-200">
             <div className="px-4 py-4 space-y-3">
               <a href="#samples" className="block text-slate-600 hover:text-purple-600">Samples</a>
-              <a href="#features" className="block text-slate-600 hover:text-purple-600">Features</a>
+              <a href="#features" className="block text-slate-600 hover:text-purple-600">Skills</a>
+              <a href="#about" className="block text-slate-600 hover:text-purple-600">Sobre</a>
               <a href="#contact" className="block text-slate-600 hover:text-purple-600">Contato</a>
-              <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-2 rounded-full">
-                Começar Agora
-              </button>
+              <a
+                href="https://wa.me/5521983781120"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white px-6 py-2 rounded-full flex items-center justify-center"
+              >
+                <MessageCircle className="w-4 h-4 mr-2" />
+                WhatsApp
+              </a>
             </div>
           </div>
         )}
@@ -146,26 +167,38 @@ function App() {
         <div className="max-w-7xl mx-auto text-center">
           <div className="animate-fade-in">
             <div className="inline-block mb-4">
-              <span className="bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-semibold">
-                ✨ Landing Pages Profissionais
+              <span className="bg-purple-100 text-purple-700 px-4 py-2 rounded-full text-sm font-semibold flex items-center justify-center">
+                <Award className="w-4 h-4 mr-2" />
+                Dev Full Stack • Rio de Janeiro 🌴
               </span>
             </div>
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              Transforme Visitantes em{' '}
-              <span className="gradient-text">Clientes</span>
+              Oi, eu sou o{' '}
+              <span className="text-purple-600">Guilherme</span>
             </h1>
-            <p className="text-xl text-slate-600 mb-8 max-w-3xl mx-auto">
-              Landing pages modernas e responsivas, desenvolvidas com React e Tailwind CSS.
-              Pronto para alavancar seu negócio online.
+            <p className="text-xl text-slate-600 mb-4 max-w-3xl mx-auto">
+              Transformo suas ideias em <strong>landing pages incríveis</strong> que fazem seu negócio decolar 🚀
+            </p>
+            <p className="text-lg text-slate-500 mb-8 max-w-2xl mx-auto">
+              React, Tailwind e 5 anos criando experiências que convertem. Simples assim.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <button className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl transition transform hover:scale-105 flex items-center">
-                Ver Samples
+              <a
+                href="#samples"
+                className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl transition transform hover:scale-105 flex items-center"
+              >
+                Bora ver uns trabalhos
                 <ArrowRight className="ml-2 w-5 h-5" />
-              </button>
-              <button className="border-2 border-purple-600 text-purple-600 px-8 py-4 rounded-full font-semibold hover:bg-purple-50 transition">
-                Falar com Vendas
-              </button>
+              </a>
+              <a
+                href="https://wa.me/5521983781120"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="border-2 border-purple-600 text-purple-600 px-8 py-4 rounded-full font-semibold hover:bg-purple-50 transition flex items-center"
+              >
+                <MessageCircle className="mr-2 w-5 h-5" />
+                Vamos conversar?
+              </a>
             </div>
           </div>
 
@@ -186,10 +219,10 @@ function App() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-              Nossos <span className="gradient-text">Samples</span>
+              O que eu <span className="text-purple-600">faço</span>
             </h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Escolha o modelo perfeito para seu negócio. Cada um customizável e otimizado para conversão.
+              Aqui tem alguns exemplos do que posso criar pra você. Cada página é pensada pra converter visitantes em clientes de verdade.
             </p>
           </div>
 
@@ -240,15 +273,49 @@ function App() {
         </div>
       </section>
 
+      {/* About Section */}
+      <section id="about" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+        <div className="max-w-5xl mx-auto">
+          <div className="bg-gradient-to-br from-purple-50 to-pink-50 p-12 rounded-3xl shadow-xl">
+            <div className="flex flex-col md:flex-row items-center gap-8">
+              <div className="w-48 h-48 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full flex items-center justify-center text-8xl shadow-2xl flex-shrink-0">
+                👨‍💻
+              </div>
+              <div className="flex-1">
+                <h2 className="text-3xl font-bold mb-4">Quem sou eu</h2>
+                <p className="text-lg text-slate-700 mb-4">
+                  Prazer! Sou o <strong>Guilherme</strong>, carioca de 32 anos que ama transformar café em código ☕
+                </p>
+                <p className="text-lg text-slate-700 mb-4">
+                  Comecei a programar há mais de <strong>5 anos</strong> e desde então não parei mais. Me formei em
+                  Análise e Desenvolvimento de Sistemas, mas é na prática que a gente aprende de verdade, né?
+                </p>
+                <p className="text-lg text-slate-700 mb-6">
+                  Meu negócio é criar landing pages que <strong>convertem</strong>. Nada de site bonito só pra enfeitar -
+                  tem que trazer resultado pro seu bolso. React, Tailwind, aquele código limpo que não dá dor de cabeça depois.
+                </p>
+                <div className="flex flex-wrap gap-3">
+                  <span className="bg-white px-4 py-2 rounded-full text-sm font-semibold text-purple-600 shadow">React</span>
+                  <span className="bg-white px-4 py-2 rounded-full text-sm font-semibold text-purple-600 shadow">Tailwind CSS</span>
+                  <span className="bg-white px-4 py-2 rounded-full text-sm font-semibold text-purple-600 shadow">JavaScript</span>
+                  <span className="bg-white px-4 py-2 rounded-full text-sm font-semibold text-purple-600 shadow">TypeScript</span>
+                  <span className="bg-white px-4 py-2 rounded-full text-sm font-semibold text-purple-600 shadow">Node.js</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Features Section */}
       <section id="features" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-50 to-purple-50">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl sm:text-5xl font-bold mb-4">
-              Por que <span className="gradient-text">Escolher-nos</span>
+              Como eu <span className="text-purple-600">trabalho</span>
             </h2>
             <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Tecnologia de ponta e design excepcional para resultados que importam
+              O que você ganha trabalhando comigo (além de um código top, claro)
             </p>
           </div>
 
@@ -272,70 +339,93 @@ function App() {
       {/* CTA Section */}
       <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-purple-600 to-pink-600">
         <div className="max-w-4xl mx-auto text-center text-white">
+          <Briefcase className="w-16 h-16 mx-auto mb-6" />
           <h2 className="text-4xl sm:text-5xl font-bold mb-6">
-            Pronto para Começar?
+            Bora criar algo incrível?
           </h2>
           <p className="text-xl mb-8 opacity-90">
-            Entre em contato e receba uma proposta personalizada para seu projeto
+            Manda uma mensagem que a gente conversa sobre seu projeto. Respondo rapidinho!
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <input
-              type="email"
-              placeholder="Seu melhor e-mail"
-              className="px-6 py-4 rounded-full text-slate-900 w-full sm:w-96 focus:outline-none focus:ring-4 focus:ring-white/50"
-            />
-            <button className="bg-white text-purple-600 px-8 py-4 rounded-full font-semibold hover:bg-slate-100 transition transform hover:scale-105 flex items-center justify-center">
-              Solicitar Contato
-              <ArrowRight className="ml-2 w-5 h-5" />
-            </button>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
+            <a
+              href="mailto:guiatorres8@gmail.com"
+              className="bg-white text-purple-600 px-8 py-4 rounded-2xl font-semibold hover:shadow-xl transition transform hover:scale-105 flex items-center justify-center"
+            >
+              <Mail className="mr-3 w-5 h-5" />
+              guiatorres8@gmail.com
+            </a>
+            <a
+              href="https://wa.me/5521983781120"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-white text-purple-600 px-8 py-4 rounded-2xl font-semibold hover:shadow-xl transition transform hover:scale-105 flex items-center justify-center"
+            >
+              <MessageCircle className="mr-3 w-5 h-5" />
+              (21) 98378-1120
+            </a>
           </div>
+          <p className="text-sm mt-6 opacity-75">📍 Rio de Janeiro, RJ</p>
         </div>
       </section>
 
       {/* Footer */}
       <footer className="bg-slate-900 text-white py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <Sparkles className="w-6 h-6 text-purple-400" />
-                <span className="text-lg font-bold">LandingStore</span>
+                <Code className="w-6 h-6 text-purple-400" />
+                <span className="text-lg font-bold">Guilherme Torres</span>
               </div>
-              <p className="text-slate-400">
-                Landing pages profissionais para impulsionar seu negócio online.
+              <p className="text-slate-400 mb-4">
+                Dev que transforma café em landing pages que convertem ☕→💰
+              </p>
+              <p className="text-slate-400 text-sm">
+                📍 Rio de Janeiro, RJ<br />
+                💼 +5 anos fazendo magia com código<br />
+                🎓 Formado, mas aprendi mesmo foi na prática
               </p>
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4">Produtos</h4>
+              <h4 className="font-semibold mb-4">Navegação</h4>
               <ul className="space-y-2 text-slate-400">
-                <li><a href="#" className="hover:text-white transition">Samples</a></li>
-                <li><a href="#" className="hover:text-white transition">Templates</a></li>
-                <li><a href="#" className="hover:text-white transition">Customização</a></li>
+                <li><a href="#samples" className="hover:text-white transition">Meus Trabalhos</a></li>
+                <li><a href="#about" className="hover:text-white transition">Sobre Mim</a></li>
+                <li><a href="#features" className="hover:text-white transition">Skills</a></li>
+                <li><a href="#contact" className="hover:text-white transition">Contato</a></li>
               </ul>
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4">Empresa</h4>
-              <ul className="space-y-2 text-slate-400">
-                <li><a href="#" className="hover:text-white transition">Sobre</a></li>
-                <li><a href="#" className="hover:text-white transition">Blog</a></li>
-                <li><a href="#" className="hover:text-white transition">Contato</a></li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="font-semibold mb-4">Legal</h4>
-              <ul className="space-y-2 text-slate-400">
-                <li><a href="#" className="hover:text-white transition">Privacidade</a></li>
-                <li><a href="#" className="hover:text-white transition">Termos</a></li>
-                <li><a href="#" className="hover:text-white transition">Cookies</a></li>
+              <h4 className="font-semibold mb-4">Contato</h4>
+              <ul className="space-y-3 text-slate-400">
+                <li>
+                  <a
+                    href="mailto:guiatorres8@gmail.com"
+                    className="hover:text-white transition flex items-center"
+                  >
+                    <Mail className="w-4 h-4 mr-2" />
+                    guiatorres8@gmail.com
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://wa.me/5521983781120"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white transition flex items-center"
+                  >
+                    <MessageCircle className="w-4 h-4 mr-2" />
+                    (21) 98378-1120
+                  </a>
+                </li>
               </ul>
             </div>
           </div>
 
           <div className="border-t border-slate-800 pt-8 text-center text-slate-400">
-            <p>&copy; 2025 LandingStore. Todos os direitos reservados.</p>
+            <p>&copy; 2025 Guilherme Torres • Feito com ❤️ e muito café • Rio de Janeiro, RJ</p>
           </div>
         </div>
       </footer>
@@ -381,12 +471,32 @@ function App() {
               ))}
             </ul>
 
-            <button className="w-full bg-gradient-to-r from-purple-600 to-pink-600 text-white py-4 rounded-xl font-semibold hover:shadow-lg transition">
-              Solicitar este Sample
-            </button>
+            <div className="flex gap-4">
+              <button
+                onClick={() => {
+                  setPreviewSample(selectedSample.id);
+                  setSelectedSample(null);
+                }}
+                className="flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 py-4 rounded-xl font-semibold transition flex items-center justify-center"
+              >
+                <Eye className="mr-2 w-5 h-5" />
+                Ver Preview
+              </button>
+              <button className="flex-1 bg-gradient-to-r from-purple-600 to-pink-600 text-white py-4 rounded-xl font-semibold hover:shadow-lg transition">
+                Solicitar este Sample
+              </button>
+            </div>
           </div>
         </div>
       )}
+
+      {/* Sample Preview - Full Page */}
+      {previewSample === 1 && <ShowcaseSample onClose={() => setPreviewSample(null)} />}
+      {previewSample === 2 && <SaasSample onClose={() => setPreviewSample(null)} />}
+      {previewSample === 3 && <PortfolioSample onClose={() => setPreviewSample(null)} />}
+      {previewSample === 4 && <AgencySample onClose={() => setPreviewSample(null)} />}
+      {previewSample === 5 && <RestaurantSample onClose={() => setPreviewSample(null)} />}
+      {previewSample === 6 && <FitnessSample onClose={() => setPreviewSample(null)} />}
     </div>
   );
 }
